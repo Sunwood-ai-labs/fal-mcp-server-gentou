@@ -62,9 +62,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             const result: any = await fal.subscribe("fal-ai/nano-banana-pro", {
                 input: {
                     prompt,
-                    aspect_ratio,
+                    aspect_ratio: aspect_ratio as any,
                     num_images,
-                    output_format,
+                    output_format: output_format as any,
                 },
                 logs: true,
                 onQueueUpdate: (update) => {
