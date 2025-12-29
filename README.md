@@ -1,9 +1,19 @@
-# Fal mcp サーバー 「幻燈」 (Gentou)
+<div align="center">
+<img src="assets/header.png" width="100%">
 
-![Header](https://via.placeholder.com/1200x400/222222/FFFFFF?text=Fal+MCP+Server+%E5%B9%BB%E7%87%88)
+# 幻燈 ：Gentou
+### ～Fal mcp server ～
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-blue?style=for-the-badge)
+![Fal AI](https://img.shields.io/badge/Fal%20AI-Indigo?style=for-the-badge)
+</div>
 
 > [!NOTE]
-> 幻燈 (Gentou) - A magic lantern that projects dreams into reality. This MCP server connects your agent to the Fal AI image generation infrastructure.
+> このリポジトリはYOROZUで作成されました
+> https://github.com/Sunwood-ai-labs/YOROZU
+
 
 ## 概要 (Overview)
 `fal-mcp-server-gentou` は、Fal AI の強力な画像生成モデル（`fal-ai/nano-banana-pro`）を Model Context Protocol (MCP) を通じて利用可能にするサーバーです。
@@ -15,6 +25,25 @@
 - **柔軟な設定**: アスペクト比や画像数、フォーマットをカスタマイズ可能。
 
 ## 📦 インストール (Installation)
+
+### Method 1: NPX (Recommended)
+すぐにサーバーを起動したい場合は、`npx` を使用するのが最も簡単です。
+
+```bash
+npx -y @sunwood-ai-labs/fal-mcp-server-gentou
+```
+
+### Method 2: Global Install
+頻繁に使用する場合は、グローバルにインストールすることをお勧めします。
+
+```bash
+npm install -g @sunwood-ai-labs/fal-mcp-server-gentou
+# 実行 (Run)
+@sunwood-ai-labs/fal-mcp-server-gentou
+```
+
+### Method 3: Source (For Developers)
+開発に参加する場合や、ソースコードからビルドしたい場合の手順です。
 
 ```bash
 git clone https://github.com/Sunwood-ai-labs/fal-mcp-server-gentou.git
@@ -35,12 +64,30 @@ FAL_KEY=your_fal_key_here
 
 MCP 設定ファイル（例: `claude_desktop_config.json`）に以下を追加します。
 
+### NPX を使用する場合 (Recommended)
+
+```json
+{
+  "mcpServers": {
+    "gentou": {
+      "command": "npx",
+      "args": ["-y", "@sunwood-ai-labs/fal-mcp-server-gentou"],
+      "env": {
+        "FAL_KEY": "your_fal_key_here"
+      }
+    }
+  }
+}
+```
+
+### ソースコードを使用する場合
+
 ```json
 {
   "mcpServers": {
     "gentou": {
       "command": "node",
-      "args": ["/path/to/fal-mcp-server-gentou/dist/index.js"],
+      "args": ["/absolute/path/to/fal-mcp-server-gentou/dist/index.js"],
       "env": {
         "FAL_KEY": "your_fal_key_here"
       }
