@@ -1,7 +1,17 @@
 {
-  "name": "fal-mcp-server-gentou",
+  "name": "@sunwood-ai-labs/fal-mcp-server-gentou",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fal MCP Server Gentou - Connects to Fal AI image generation",
+  "bin": {
+    "fal-mcp-server-gentou": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunwood-ai-labs/fal-mcp-server-gentou.git"
+  },
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
