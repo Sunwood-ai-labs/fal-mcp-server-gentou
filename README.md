@@ -1,9 +1,19 @@
-# Fal mcp サーバー 「幻燈」 (Gentou)
+<div align="center">
+<img src="assets/header.png" width="100%">
 
-![Header](assets/header.png)
+# 幻燈 ：Gentou
+### ～Fal mcp server ～
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-blue?style=for-the-badge)
+![Fal AI](https://img.shields.io/badge/Fal%20AI-Indigo?style=for-the-badge)
+</div>
 
 > [!NOTE]
-> 幻燈 (Gentou) - A magic lantern that projects dreams into reality. This MCP server connects your agent to the Fal AI image generation infrastructure.
+> このリポジトリはYOROZUで作成されました
+> https://github.com/Sunwood-ai-labs/YOROZU
+
 
 ## 概要 (Overview)
 `fal-mcp-server-gentou` は、Fal AI の強力な画像生成モデル（`fal-ai/nano-banana-pro`）を Model Context Protocol (MCP) を通じて利用可能にするサーバーです。
