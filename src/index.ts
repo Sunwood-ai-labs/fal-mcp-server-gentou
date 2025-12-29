@@ -6,9 +6,7 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
 import { fal } from "@fal-ai/client";
-import dotenv from "dotenv";
 
-dotenv.config();
 
 const server = new Server(
     {
@@ -22,26 +20,21 @@ const server = new Server(
     }
 );
 
-const GenerateImageSchema = z.object({
-    prompt: z.string().describe("The description of the image to generate."),
-    aspect_ratio: z.string().default("1:1").describe("Aspect ratio (e.g., '1:1', '16:9')."),
-    num_images: z.number().default(1).describe("Number of images to generate."),
-    output_format: z.string().default("png").describe("Output format (e.g., 'png', 'jpeg')."),
-});
+import { GenerateImageSchema } from "./schema.js";
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
         tools: [
             {
                 name: "generate_image",
-                description: "Generate an image using Fal AI (fal-ai/nano-banana-pro).",
+                description: "Fal AI (fal-ai/nano-banana-pro) を使用して画像を生成します。",
                 inputSchema: {
                     type: "object",
                     properties: {
-                        prompt: { type: "string", description: "The description of the image to generate." },
-                        aspect_ratio: { type: "string", default: "1:1", description: "Aspect ratio (e.g., '1:1', '16:9')." },
-                        num_images: { type: "number", default: 1, description: "Number of images to generate." },
-                        output_format: { type: "string", default: "png", description: "Output format (e.g., 'png', 'jpeg')." }
+                        prompt: { type: "string", description: "生成する画像のプロンプト (英語推奨)" },
+                        aspect_ratio: { type: "string", default: "1:1", description: "アスペクト比 (例: '1:1', '16:9')" },
+                        num_images: { type: "number", default: 1, description: "生成する画像の枚数" },
+                        output_format: { type: "string", default: "png", description: "出力フォーマット (例: 'png', 'jpeg')" }
                     },
                     required: ["prompt"]
                 },
